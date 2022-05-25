@@ -1,0 +1,11 @@
+.buttonStyles {
+	color: black;
+	font-weight: bold;
+	background-color: #28a745;
+  border-color: #28a745;
+}
+
+.buttonStyles:hover {
+	background-color: #218838;
+  border-color: #1e7e34;
+}

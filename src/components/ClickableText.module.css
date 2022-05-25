@@ -1,0 +1,10 @@
+.linkStyle {
+  color: #1DB954;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.linkStyle:hover {
+  color: #218838;
+}

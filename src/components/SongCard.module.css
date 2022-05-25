@@ -1,0 +1,85 @@
+.bodyStyle {
+  background-color: #1f1f1f;
+  color: white;
+  height: 100%;
+}
+
+.bottomDivider {
+  border-bottom: 1px solid gray;
+}
+
+/*@media (min-width: 768px)*/
+.explicitStyle {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.explicitStyle {
+  box-sizing: border-box;
+  font-family: var(--font-family,spotify-circular),Helvetica,Arial,sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  margin-block: 0px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: var(--text-subdued,#6a6a6a);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  grid-area: badges;
+  justify-content: center;
+}
+
+.explicitTextStyle {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(255,255,255,.6);
+  border-radius: 2px;
+  color: #121212;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 9px;
+  height: 16px;
+  justify-content: center;
+  line-height: 10px;
+  padding: 3px 5px;
+  text-transform: uppercase;
+}
+
+.lineClampStyle1 {
+   word-break: break-word;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 1; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+
+.lineClampStyle2 {
+   word-break: break-word;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+
+.lineClampStyle3 {
+   word-break: break-word;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 3; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}

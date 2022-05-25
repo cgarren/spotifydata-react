@@ -1,0 +1,11 @@
+.widgetStyle {
+	border-radius: 20px;
+	background-color: #292929;
+	text-align: center;
+	white-space: nowrap;
+	position: relative;
+}
+
+.labelStyle {
+	color: gray;
+}

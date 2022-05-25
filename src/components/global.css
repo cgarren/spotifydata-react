@@ -1,0 +1,11 @@
+.btn-flat {
+	background-color: purple;
+	color: white;
+}
+
+.modal-content {
+	height: 100%;
+	border: none!important;
+	border-radius: 0!important;
+	background-color: #1f1f1f!important;
+}

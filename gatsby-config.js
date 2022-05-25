@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
       title: `Spotifydata`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.spotifydata.com`
   },
   plugins: ["gatsby-plugin-netlify-cms", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
