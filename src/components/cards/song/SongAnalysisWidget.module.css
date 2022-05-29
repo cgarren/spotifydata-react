@@ -9,3 +9,21 @@
 .labelStyle {
 	color: gray;
 }
+
+.tabStyle {
+	color: #1DB954!important;
+}
+
+.tabStyle:hover {
+	background-color: #218838!important;
+	color: white!important;
+}
+
+.tabStyle:global(.active) {
+	color: white!important;
+	background-color: #1DB954!important;
+}
+
+.tabStyle:global(.active):hover {
+	color: white!important;
+}

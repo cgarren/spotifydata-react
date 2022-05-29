@@ -74,6 +74,7 @@ const SongCard = ({ songId, setSongId, albumId }) => {
   const [likedStatus, setLikedStatus] = useState([null]);
   const [songAnalysis, setSongAnalysis] = useState({
     track: {
+      duration: null,
       end_of_fade_in: null,
       start_of_fade_out: null,
       loudness: null,
@@ -86,6 +87,22 @@ const SongCard = ({ songId, setSongId, albumId }) => {
       mode: null,
       mode_confidence: null,
     },
+    sections: [
+      {
+        start: null,
+        duration: null,
+        confidence: null,
+        loudness: null,
+        tempo: null,
+        tempo_confidence: null,
+        time_signature: null,
+        time_signature_confidence: null,
+        key: null,
+        key_confidence: null,
+        mode: null,
+        mode_confidence: null,
+      },
+    ],
   });
   const [songMetadata, setSongMetadata] = useState({
     artists: [
@@ -301,7 +318,10 @@ const SongCard = ({ songId, setSongId, albumId }) => {
             needsMargin={false}
             needsBottomDivider={true}
           >
-            <SongAnalysisWidget myprop="" />
+            <SongAnalysisWidget
+              sections={songAnalysis.sections}
+              duration={songAnalysis.duration}
+            />
           </SongCardSection>
 
           {/* SONG INFO */}
