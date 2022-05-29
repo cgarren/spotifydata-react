@@ -247,7 +247,7 @@ const SongCard = ({ songId, setSongId, albumId }) => {
   let cardSubHeader = (
     <div>
       <Stack direction="horizontal" gap={1}>
-        {songMetadata.explicit == true ? (
+        {songMetadata.explicit === true ? (
           <span className={explicitStyle}>
             <span
               aria-label="Explicit"
@@ -316,13 +316,13 @@ const SongCard = ({ songId, setSongId, albumId }) => {
               ref={statRef}
               label={
                 "release " +
-                (songMetadata.album.release_date_precision == "year"
+                (songMetadata.album.release_date_precision === "year"
                   ? "year"
                   : "date")
               }
               tooltip={
                 "The release " +
-                (songMetadata.album.release_date_precision == "year"
+                (songMetadata.album.release_date_precision === "year"
                   ? "year"
                   : "date") +
                 " of the track"
