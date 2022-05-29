@@ -4,6 +4,8 @@ import BarWidget from "../../widgets/BarWidget";
 import SongAnalysisBar from "./SongAnalysisBar";
 import { widgetStyle, tabStyle } from "./SongAnalysisWidget.module.css";
 
+//TODO: Get creative with how you display this on mobile. Maybe a circular thing or verical bar? Maybe a waterfall type diagram
+
 const SongAnalysisWidget = ({ sections, duration }) => {
   const [selection, setSelection] = useState("tempo");
   function changedTab(eventKey, event) {
