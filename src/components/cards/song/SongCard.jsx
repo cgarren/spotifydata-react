@@ -56,7 +56,8 @@ import {
 //TODO: Implement a sort of "tag" system under the album for songs like "dancable" or "happy" if those stats are over a certain amount. Make it cutesy maybe with emojis or something
 //TODO: Consider also getting the currently playing track to feed into the recently played stat
 //TODO: Consider adding an "Add to queue" button
-//TODO: Consider addding the ability to like the song
+//TODO: Consider adding the ability to like the song
+//TODO: There is so much potential for graphs using the beats/bars/tatums/sections. Ex: Graph the tempo over time for each bar
 
 const SongCard = ({ songId, setSongId, albumId }) => {
   const statRef = useRef();
