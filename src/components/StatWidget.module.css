@@ -4,6 +4,7 @@
 	text-align: center;
 	white-space: nowrap;
 	position: relative;
+	height: 100%;
 }
 
 .tooltipPresent {

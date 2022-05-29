@@ -1,0 +1,6 @@
+.progressBarStyle {
+  background-color: black!important;
+  /*height: calc(1.325rem + .9vw)!important;*/
+  height: 100%!important;
+  min-height: 100%!important;
+}

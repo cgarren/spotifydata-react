@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, forwardRef } from "react";
 import { Col, Overlay, Tooltip, Spinner } from "react-bootstrap";
 import {
   widgetStyle,
@@ -6,7 +6,7 @@ import {
   labelStyle,
 } from "./StatWidget.module.css";
 
-const StatWidget = ({ stat, label, tooltip }) => {
+const StatWidget = forwardRef(({ stat, label, tooltip }, ref) => {
   const [show, setShow] = useState(false);
   const [timeoutID, setTimeoutID] = useState(0);
   const target = useRef(null);
@@ -33,7 +33,7 @@ const StatWidget = ({ stat, label, tooltip }) => {
         ref={target}
         onClick={toggleTooltip}
       >
-        <h2>
+        <h2 ref={ref}>
           {stat === null ? (
             <Spinner animation="border" variant="light" />
           ) : (
@@ -47,6 +47,8 @@ const StatWidget = ({ stat, label, tooltip }) => {
       </Overlay>
     </Col>
   );
-};
+});
+
+forwardRef.displayName = `StatWidget`;
 
 export default StatWidget;

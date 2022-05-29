@@ -42,6 +42,15 @@ async function loadRequest(url, params) {
 	}
 }
 
+function getCanvasFontSize(el = document.body) {
+	const style = window.getComputedStyle(el, null);
+  const fontWeight = style.getPropertyValue('font-weight') || 'normal';
+  const fontSize = style.getPropertyValue('font-size') || '16px';
+  const fontFamily = style.getPropertyValue('font-family') || 'Times New Roman';
+  
+  return `${fontWeight} ${fontSize} ${fontFamily}`;
+}
+
 function decimalToInteger(decimal) {
 	return Math.round(decimal * 100);
 }
