@@ -29,7 +29,6 @@ const LargeCard = ({
     <Modal
       show={show}
       onHide={handleClose}
-      scrollable="true"
       dialogClassName={dialogStyle + " " + dialogWidth}
       aria-labelledby="example-custom-modal-styling-title"
     >
