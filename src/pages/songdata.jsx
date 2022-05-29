@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import { Link } from "gatsby";
 import SongCard from "../components/cards/song/SongCard";
-import SongSearchBar from "../components/SongSearchBar";
+import SongSearchBar from "../components/search/SongSearchBar";
 
 const SongdataPage = () => {
   //think about displaying a list of options as the user types
