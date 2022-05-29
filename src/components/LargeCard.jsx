@@ -30,7 +30,6 @@ const LargeCard = ({
       show={show}
       onHide={handleClose}
       dialogClassName={dialogStyle + " " + dialogWidth}
-      aria-labelledby="example-custom-modal-styling-title"
     >
       <Modal.Header className={headerStyle + " px-0 pt-2"}>
         <Container fluid>

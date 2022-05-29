@@ -1,0 +1,12 @@
+.bottomDivider {
+  border-bottom: 1px solid gray;
+}
+
+.lineClampStyle1 {
+   word-break: break-word;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 1; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}

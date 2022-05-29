@@ -13,7 +13,6 @@ import {
 import LargeCard from "./LargeCard";
 import {
   bodyStyle,
-  bottomDivider,
   explicitStyle,
   explicitTextStyle,
   lineClampStyle1,
@@ -23,6 +22,7 @@ import {
 import StatWidget from "./StatWidget";
 import BarWidget from "./BarWidget";
 import SongAnalysisWidget from "./SongAnalysisWidget";
+import SongCardSection from "./SongCardSection";
 import ClickableText from "./ClickableText";
 import {
   durationCalc,
@@ -283,8 +283,6 @@ const SongCard = ({ songId, setSongId, albumId }) => {
     </div>
   );
 
-  const marginClass = "row-cols-xxl-5 g-1 g-lg-3 mb-3 pb-3";
-
   return (
     <LargeCard
       show={show}
@@ -298,19 +296,21 @@ const SongCard = ({ songId, setSongId, albumId }) => {
         <Container fluid className="p-0">
           {/* SONG ANALYSIS */}
 
-          <Row>
-            <h2>Song Analysis</h2>
-          </Row>
-          <Row className={bottomDivider + " mb-3 pb-3"}>
+          <SongCardSection
+            title="Song Analysis"
+            needsMargin={false}
+            needsBottomDivider={true}
+          >
             <SongAnalysisWidget myprop="" />
-          </Row>
+          </SongCardSection>
 
           {/* SONG INFO */}
 
-          <Row>
-            <h2>Song Info</h2>
-          </Row>
-          <Row className={bottomDivider + " " + marginClass}>
+          <SongCardSection
+            title="Song Info"
+            needsMargin={true}
+            needsBottomDivider={true}
+          >
             <StatWidget
               stat={releaseYearCalc(songMetadata.album.release_date)}
               ref={statRef}
@@ -355,14 +355,15 @@ const SongCard = ({ songId, setSongId, albumId }) => {
               tooltip="The number of countries in which the track can be played"
             />
             <StatWidget stat="other stat type" label="spotify playlists" />
-          </Row>
+          </SongCardSection>
 
           {/* SONG ATTRIBUTES */}
 
-          <Row>
-            <h2>Song Attributes</h2>
-          </Row>
-          <Row className={bottomDivider + " " + marginClass}>
+          <SongCardSection
+            title="Song Attributes"
+            needsMargin={true}
+            needsBottomDivider={true}
+          >
             <BarWidget
               value={danceabilityCalc(songStats.danceability)}
               scale={[0, 100]}
@@ -460,14 +461,15 @@ const SongCard = ({ songId, setSongId, albumId }) => {
               tooltip="TThe time at which the track's fade-out period starts. If the track has no fade-out, this should match the track's length"
             />
             <StatWidget stat="other stat type" label="genres" />
-          </Row>
+          </SongCardSection>
 
           {/* Song Name and Me */}
 
-          <Row>
-            <h2 className={lineClampStyle1}>You and "{songMetadata.name}"</h2>
-          </Row>
-          <Row className={bottomDivider + " " + marginClass}>
+          <SongCardSection
+            title={"You and " + songMetadata.name}
+            needsMargin={true}
+            needsBottomDivider={true}
+          >
             <StatWidget
               stat={likedStatusCalc(likedStatus[0])}
               label="liked?"
@@ -489,16 +491,17 @@ const SongCard = ({ songId, setSongId, albumId }) => {
               tooltip="The rank the track holds in your top songs. If the song appears in your top songs over multiple time ranges, the oldest one is displayed"
             />
             <StatWidget stat="other stat type" label="user playlists" />
-          </Row>
+          </SongCardSection>
 
           {/* Recommendations */}
 
-          <Row>
-            <h2>Recommendations</h2>
-          </Row>
-          <Row className={marginClass}>
+          <SongCardSection
+            title={"Recommendations"}
+            needsMargin={true}
+            needsBottomDivider={false}
+          >
             <StatWidget stat="other stat type" label="from Spotify" />
-          </Row>
+          </SongCardSection>
         </Container>
       </Modal.Body>
     </LargeCard>

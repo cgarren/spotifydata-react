@@ -4,10 +4,6 @@
   height: 100%;
 }
 
-.bottomDivider {
-  border-bottom: 1px solid gray;
-}
-
 /*@media (min-width: 768px)*/
 .explicitStyle {
   font-size: 1rem;
