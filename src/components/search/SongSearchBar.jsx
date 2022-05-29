@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
 import { barStyle } from "./SongSearchBar.module.css";
-import SongSuggestionList from "../SongSuggestionList";
+import SongSuggestionList from "./SongSuggestionList";
 import { loadRequest } from "../../utilities/helpers";
 
 const SongSearchBar = ({ setSongId, setAlbumId }) => {
