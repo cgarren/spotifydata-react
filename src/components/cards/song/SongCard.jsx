@@ -10,7 +10,7 @@ import {
   ProgressBar,
   Spinner,
 } from "react-bootstrap";
-import LargeCard from "./LargeCard";
+import LargeCard from "../LargeCard";
 import {
   bodyStyle,
   explicitStyle,
@@ -19,11 +19,11 @@ import {
   lineClampStyle2,
   lineClampStyle3,
 } from "./SongCard.module.css";
-import StatWidget from "./StatWidget";
-import BarWidget from "./BarWidget";
+import StatWidget from "../../widgets/StatWidget";
+import BarWidget from "../../widgets/BarWidget";
 import SongAnalysisWidget from "./SongAnalysisWidget";
 import SongCardSection from "./SongCardSection";
-import ClickableText from "./ClickableText";
+import ClickableText from "../../ClickableText";
 import {
   durationCalc,
   loadRequest,
@@ -50,7 +50,7 @@ import {
   likedStatusCalc,
   recentlyPlayedCalc,
   topSongsCalc,
-} from "../utilities/helpers";
+} from "../../../utilities/helpers";
 
 //TODO: Consider switching to a lazy loading model for the stats, where the card is shown and the stats load after with spinners in place. Especially for the playlist widgets
 //TODO: Implement a sort of "tag" system under the album for songs like "dancable" or "happy" if those stats are over a certain amount. Make it cutesy maybe with emojis or something

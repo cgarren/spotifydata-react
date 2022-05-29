@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ProgressBar, Spinner } from "react-bootstrap";
 import StatWidget from "./StatWidget";
-import { pickHex } from "../utilities/helpers";
+import { pickHex } from "../../utilities/helpers";
 import { progressBarStyle } from "./BarWidget.module.css";
 
 const BarWidget = ({ value, label, tooltip, scale, barHeight }) => {
