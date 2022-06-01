@@ -1,10 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
-import { ProgressBar, Tabs, Tab } from "react-bootstrap";
-import BarWidget from "../../widgets/BarWidget";
+import { Tabs, Tab } from "react-bootstrap";
 import SongAnalysisBar from "./SongAnalysisBar";
-import { widgetStyle, tabStyle } from "./SongAnalysisWidget.module.css";
+import {
+  widgetStyle,
+  tabStyle,
+  tabsStyle,
+} from "./SongAnalysisWidget.module.css";
 
-//TODO: Get creative with how you display this on mobile. Maybe a circular thing or verical bar? Maybe a waterfall type diagram
+//TODO: Get creative with how you display this on mobile. Maybe a circular thing or vertical bar? Maybe a waterfall type diagram
 
 const SongAnalysisWidget = ({ sections, duration }) => {
   const [selection, setSelection] = useState("tempo");
@@ -17,7 +20,7 @@ const SongAnalysisWidget = ({ sections, duration }) => {
       <Tabs
         defaultActiveKey="tempo"
         id="uncontrolled-tab-example"
-        className="mb-3"
+        className={"mb-3 " + tabsStyle}
         variant="pills"
         onSelect={changedTab}
         justify
@@ -32,7 +35,11 @@ const SongAnalysisWidget = ({ sections, duration }) => {
           tabClassName={tabStyle}
         ></Tab>
       </Tabs>
-      <SongAnalysisBar sections={sections} attribute={selection} />
+      <SongAnalysisBar
+        sections={sections}
+        attribute={selection}
+        track_duration={duration}
+      />
     </div>
   );
 };

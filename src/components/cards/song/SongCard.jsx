@@ -58,6 +58,7 @@ import {
 //TODO: Consider adding an "Add to queue" button
 //TODO: Consider adding the ability to like the song
 //TODO: There is so much potential for graphs using the beats/bars/tatums/sections. Ex: Graph the tempo over time for each bar
+//TODO: WAYYY more visual elements, less text
 
 const SongCard = ({ songId, setSongId, albumId }) => {
   const statRef = useRef();
@@ -321,7 +322,7 @@ const SongCard = ({ songId, setSongId, albumId }) => {
           >
             <SongAnalysisWidget
               sections={songAnalysis.sections}
-              duration={songAnalysis.duration}
+              duration={songAnalysis.track.duration}
             />
           </SongCardSection>
 

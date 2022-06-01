@@ -10,8 +10,14 @@
 	color: gray;
 }
 
+.tabsStyle {
+	/* border: 1px solid black;
+	border-radius: 0.25rem; */
+}
+
 .tabStyle {
-	color: #1DB954!important;
+	color: white!important;
+	background-color: #218838!important;
 }
 
 .tabStyle:hover {
