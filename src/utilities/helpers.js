@@ -82,9 +82,12 @@ function convertMilliseconds(millis) {
 	}
 	
 	if (hours === 0) {
-			return minutes + ":" + seconds;
+		return minutes + ":" + seconds;
 	} else {
-			return hours + ":" + minutes + ":" + seconds;
+		if (minutes <= 9) {
+			minutes = "0" + minutes;
+		}
+		return hours + ":" + minutes + ":" + seconds;
 	}
 }
 

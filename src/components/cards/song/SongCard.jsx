@@ -353,7 +353,7 @@ const SongCard = ({ songId, setSongId, albumId }) => {
             <StatWidget
               stat={durationCalc(songMetadata.duration_ms)}
               label="duration"
-              tooltip="Length of the track in minutes and seconds"
+              tooltip="Length of the track in hours, minutes, and seconds"
             />
             <StatWidget
               stat={albumPositionCalc(
