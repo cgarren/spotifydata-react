@@ -295,6 +295,7 @@ function topSongsCalc(songId, topSongsShort, topSongsMedium, topSongsLong) {
 
 export {
 	loadRequest,
+	decimalToInteger,
 	durationCalc,
 	pickHex,
 	albumPositionCalc,
