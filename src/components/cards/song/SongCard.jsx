@@ -10,8 +10,6 @@ import {
   ProgressBar,
   Spinner,
 } from "react-bootstrap";
-import { Doughnut } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import LargeCard from "../LargeCard";
 import {
   bodyStyle,
@@ -61,8 +59,7 @@ import {
 //TODO: Consider adding the ability to like the song
 //TODO: There is so much potential for graphs using the beats/bars/tatums/sections. Ex: Graph the tempo over time for each bar
 //TODO: WAYYY more visual elements, less text
-
-ChartJS.register(ArcElement, Tooltip, Legend);
+//TODO: Think about rebranding this page as Song Explorer
 
 const SongCard = ({ songId, setSongId, albumId }) => {
   const statRef = useRef();
@@ -257,7 +254,9 @@ const SongCard = ({ songId, setSongId, albumId }) => {
 
   useEffect(() => {
     window.addEventListener("resize", () => {
-      setProgressBarHeight(statRef.current.offsetHeight + "px");
+      if (statRef.current) {
+        setProgressBarHeight(statRef.current.offsetHeight + "px");
+      }
     });
   });
 
@@ -327,21 +326,6 @@ const SongCard = ({ songId, setSongId, albumId }) => {
             <SongAnalysisWidget
               sections={songAnalysis.sections}
               duration={songAnalysis.track.duration}
-            />
-            <Doughnut
-              data={{
-                labels: ["1", "2", "3"],
-                datasets: [
-                  {
-                    backgroundColor: [
-                      "rgba(75,192,192,1)",
-                      "rgba(54, 162, 235, 0.2)",
-                      "rgba(255, 99, 132, 1)",
-                    ],
-                    data: [1, 2, 3],
-                  },
-                ],
-              }}
             />
           </SongCardSection>
 
