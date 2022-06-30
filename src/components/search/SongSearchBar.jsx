@@ -9,35 +9,35 @@ const SongSearchBar = ({ setSongId, setAlbumId }) => {
   const [songSuggestionList, setSongSuggestionList] = useState([]);
 
   async function searchSuggestions() {
-    if (searchText !== "") {
+    if (searchText.trim() !== "") {
       var params = { q: searchText, type: "track", limit: 5 };
       var url =
         "https://api.spotify.com/v1/search/?" +
         new URLSearchParams(params).toString();
       let response = await loadRequest(url);
       console.log(response);
-      if (!response["error"]) {
+      if (!response["error"] && response.tracks.items.length > 0) {
         let templist = [];
         response.tracks.items.map((item) => {
-          templist.push({
-            name: item.name,
-            artist: item.artists[0].name,
-            art: item.album.images[2].url,
-            id: item.id,
-            onClick: () => {
-              setSongId(item.id);
-              setAlbumId(item.album.id);
-            },
-          });
+          if (item.album.images.length > 0) {
+            templist.push({
+              name: item.name,
+              artist: item.artists[0].name,
+              art: item.album.images[2].url,
+              id: item.id,
+              onClick: () => {
+                setSongId(item.id);
+                setAlbumId(item.album.id);
+              },
+            });
+          }
         });
-
         setSongSuggestionList(templist);
       } else {
         console.log("no results for search");
         setSongSuggestionList([]);
       }
     } else {
-      console.log("seeting to nothing");
       setSongSuggestionList([]);
     }
   }
